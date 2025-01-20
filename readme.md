@@ -1,8 +1,8 @@
 ### Step-02-01: Review our Custom Helm Repo
-- [StackSimplify Helm Repo hosted on GitHub](https://stacksimplify.github.io/helm-charts/)
-- [GitHub Repository for StackSimplify Helm Repo](https://github.com/stacksimplify/helm-charts)
-- [artifacthub.io](https://artifacthub.io): Search for `stacksimplify`
-- [mychart1 from artifacthub.io](https://artifacthub.io/packages/helm/stacksimplify/mychart1)
+- [vishnutheja88 Helm Repo hosted on GitHub](https://vishnutheja88.github.io/helm-charts/)
+- [GitHub Repository for Vishnutheja Helm Repo](https://github.com/vishnutheja88/helm-charts)
+- [artifacthub.io](https://artifacthub.io): Search for `vishnutheja88`
+- [mychart1 from artifacthub.io](https://artifacthub.io/packages/helm/vishnutheja88/mychart1)
 
 
 ### Step-02-02: Add Custom Helm Repo
@@ -12,7 +12,7 @@ helm repo list
 
 # Add Helm Repository
 helm repo add <DESIRED-NAME> <HELM-REPO-URL>
-helm repo add stacksimplify https://stacksimplify.github.io/helm-charts/
+helm repo add stacksimplify https://vishnutheja88.github.io/helm-charts/
 
 # List Helm Repositories
 helm repo list
@@ -26,7 +26,7 @@ helm search repo mychart1
 ```t
 # Install myapp1 Helm Chart
 helm install <RELEASE-NAME> <repo_name_in_your_local_desktop/chart_name>
-helm install myapp1 stacksimplify/mychart1 
+helm install myapp1 vishnutheja88/mychart1 
 ```
 ## Step-04: List Resources and Access Application in Browser
 ```t
@@ -47,7 +47,7 @@ http://localhost:31231
 ```
 
 ## Step-04: Helm Upgrade
-- [kubenginx Docker Image with 1.0.0, 2.0.0, 3.0.0, 4.0.0](https://github.com/users/stacksimplify/packages/container/package/kubenginx)
+- [kubenginx Docker Image with 1.0.0, 2.0.0, 3.0.0, 4.0.0](https://github.com/users/vishnutheja88/packages/container/package/kubenginx)
 ```t
 # Review the Docker Image Versions we are using
 https://github.com/users/stacksimplify/packages/container/package/kubenginx
@@ -70,7 +70,7 @@ helm list --deployed
 # List and Describe Pod
 kubectl get pods
 kubectl describe pod <POD-NAME> 
-Observation: In the Pod Events you should find that "ghcr.io/stacksimplify/kubenginx:2.0.0" is pulled or if already exists on desktop it will be used to create this new pod
+Observation: In the Pod Events you should find that "ghcr.io/vishnutheja88/kubenginx:2.0.0" is pulled or if already exists on desktop it will be used to create this new pod
 
 # Access Application
 http://localhost:<NODE-PORT>
@@ -81,14 +81,14 @@ Observation: Version 2 of application should be displayed
 ## Step-06: Do two more helm upgrades - For practice purpose
 ```t
 # Helm Upgrade to 3.0.0
-helm upgrade myapp1 kalyan-repo/myapp1 --set "image.tag=3.0.0"
+helm upgrade myapp1 vishnu-repo/myapp1 --set "image.tag=3.0.0"
 
 # Access Application
 http://localhost:<NODE-PORT>
 http://localhost:31231
 
 # Helm Upgrade to 4.0.0
-helm upgrade myapp1 kalyan-repo/myapp1 --set "image.tag=4.0.0"
+helm upgrade myapp1 vishnu-repo/myapp1 --set "image.tag=4.0.0"
 
 # Access Application
 http://localhost:<NODE-PORT>
